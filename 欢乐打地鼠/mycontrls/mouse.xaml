@@ -1,0 +1,109 @@
+﻿<UserControl
+    x:Class="欢乐打地鼠.mouse"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:欢乐打地鼠"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Height="115"  Width="115"
+    Name="mouse" Loaded="mouse_Loaded"
+    RenderTransformOrigin="0.5,0.5">
+    <UserControl.Resources>
+        <Storyboard x:Name="地鼠钻出动画" Completed="地鼠钻出动画_Completed">
+            
+            <DoubleAnimation 
+                Storyboard.TargetName="地鼠钻出"                            
+                Storyboard.TargetProperty="TranslateY"                                     
+                To="0"                             
+                Duration="0:0:0.5">
+            </DoubleAnimation>
+
+            
+        </Storyboard>
+        <Storyboard x:Name="地鼠钻回动画" Completed="地鼠钻回动画_Completed">
+            <DoubleAnimation 
+                Storyboard.TargetName="地鼠钻出" 
+                Storyboard.TargetProperty="TranslateY"                                     
+                To="120" From="0"
+                Duration="0:0:0.8">
+            </DoubleAnimation>
+
+        </Storyboard>
+        <Storyboard x:Name="地鼠晃动动画" Completed="地鼠晃动动画_Completed">
+            <DoubleAnimation 
+                Storyboard.TargetName="地鼠钻出" 
+                Storyboard.TargetProperty="TranslateX"
+                By="6" RepeatBehavior="4x" 
+                Duration="0:0:0.2" AutoReverse="True">
+            </DoubleAnimation>
+      
+        </Storyboard>
+        <Storyboard x:Name="地鼠打回动画" Completed="地鼠打回动画_Completed">
+
+
+            <DoubleAnimationUsingKeyFrames
+                Storyboard.TargetName="地鼠钻出" 
+                Storyboard.TargetProperty="TranslateY"                                     
+                Duration="0:0:0.3">
+                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:0"></LinearDoubleKeyFrame>
+                <LinearDoubleKeyFrame Value="10" KeyTime="0:0:0.2"></LinearDoubleKeyFrame>
+                <LinearDoubleKeyFrame Value="120" KeyTime="0:0:0.3"></LinearDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            
+            
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.RenderTransform >
+        <CompositeTransform  x:Name="scale" ScaleX="1" ScaleY="1"/>
+    </UserControl.RenderTransform>
+    <Grid >
+        <Ellipse 
+            Margin="2,70,2,2" 
+            Fill="#FF002107" 
+            IsTapEnabled="False">
+        </Ellipse>
+        <Image 
+            Name="Hole_upside"  
+            Margin="-2,19,-2,-21" 
+            IsTapEnabled="False" 
+            Source="ms-appx:///images/up_hole.png">
+        </Image>
+
+        <ScrollViewer VerticalScrollBarVisibility="Hidden"                       
+                      HorizontalAlignment="Center" VerticalAlignment="Center" 
+                      Height="111" Margin="3,3,2,1">
+
+            <Image 
+            x:Name="mouse_pic"                     
+            Source="ms-appx:///images\king_mouse.png"                                            
+            Stretch="Fill" Width="100" Margin="10,10,0,0"                                               
+            RenderTransformOrigin="0.5,0.5" >
+
+                <Image.RenderTransform >
+                    <CompositeTransform x:Name="地鼠钻出" TranslateX="0" TranslateY="0" Rotation="0" CenterX="0.5" CenterY="0.5"/>
+                </Image.RenderTransform>
+            
+            </Image>
+        </ScrollViewer>
+
+        <Image 
+            Name="Hole_downside" 
+            Source="ms-appx:///images\below_hole.png" 
+            Margin="-2,47,-2,-44"                
+            IsDoubleTapEnabled="False" 
+            IsHitTestVisible="False" 
+            IsHoldingEnabled="False" 
+            IsRightTapEnabled="False"
+            IsTapEnabled="False">
+          
+        </Image>
+
+        <Image Name="star" Margin="14,0,0,-2" HorizontalAlignment="Left" Width="113" >
+        </Image>
+
+       
+        <MediaElement Name="hitsound" />
+
+    </Grid>
+</UserControl>

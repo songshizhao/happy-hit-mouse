@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<levels>
+
+
+  <level
+    关卡名="精灵鼠来袭!"
+    总分="800"
+    时间限制="40"
+    图标状态="images\angle_mouse.png"
+    当前得分="0"> 
+  </level>
+
+  <level
+  关卡名="精灵鼠来袭2!"
+  总分="3900"
+  时间限制="60"
+  图标状态="images\angle_mouse.png"
+  当前得分="8">
+  </level>
+
+  <level
+  关卡名="海盗出击"
+  总分="4000"
+  时间限制="60"
+  图标状态="images\craze_mouse.png"
+  当前得分="8">
+  </level>
+
+  <level
+  关卡名="流氓兔来捣乱"
+  总分="4600"
+  时间限制="4600"
+  图标状态="images\rabbit.png"
+  当前得分="2">
+  </level>
+
+  <level
+关卡名="鼠王登场"
+总分="4300"
+时间限制="60"
+图标状态="images\king_mouse.png"
+当前得分="2">
+  </level>
+
+  <level
+关卡名="我们都饿坏了！！"
+总分="4400"
+时间限制="60"
+图标状态="images\pretty_mouse.png"
+当前得分="2">
+  </level>
+  
+  <level
+关卡名="地鼠革命"
+总分="5900"
+时间限制="60"
+图标状态="images\pretty_mouse.png"
+当前得分="2">
+  </level>
+
+  <level
+关卡名="注意，注意，这不是演习！"
+总分="6100"
+时间限制="60"
+图标状态="images\king_mouse.png"
+当前得分="2">
+  </level>
+
+  <level
+关卡名="你的粮食就是我的粮食！"
+总分="6300"
+时间限制="60"
+图标状态="images\craze_mouse.png"
+当前得分="2">
+  </level>
+  
+ 
+  <level
+关卡名="背水一战，全军出击！"
+总分="6500"
+时间限制="60"
+图标状态="images\craze_mouse.png"
+当前得分="2">
+  </level>
+  
+  
+  
+  
+  
+</levels>
